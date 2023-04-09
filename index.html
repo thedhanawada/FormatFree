@@ -45,7 +45,13 @@
       }
       
       /* Output styles */
-      pre {
+      #output-container {
+        display: none;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      
+      #output-container pre {
         white-space: pre-wrap;
         word-wrap: break-word;
         background-color: #fff;
@@ -64,17 +70,26 @@
       <p>Paste your text below:</p>
       <textarea id="input" rows="10"></textarea>
       <button id="clean-button">Clean</button>
-      <p>Cleaned text:</p>
-      <pre id="output"></pre>
+      <div id="output-container">
+        <p>Cleaned text:</p>
+        <pre id="output"></pre>
+      </div>
     </div>
     
     <script>
       const cleanButton = document.getElementById('clean-button');
+      const outputContainer = document.getElementById('output-container');
       const output = document.getElementById('output');
+      
       cleanButton.addEventListener('click', () => {
         const dirtyText = document.getElementById('input').value;
         const cleanText = dirtyText.replace(/<\/?[^>]+(>|$)/g, "");
-        output.innerText = cleanText;
+        if (cleanText) {
+          outputContainer.style.display = "block";
+          output.innerText = cleanText;
+        } else {
+          outputContainer.style.display = "none";
+        }
       });
     </script>
   </body>
