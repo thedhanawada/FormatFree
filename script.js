@@ -10,11 +10,13 @@ input.addEventListener('input', () => {
   charCount.innerText = `${count} characters`;
 });
 
+
 input.addEventListener('input', () => {
   const text = input.value;
   const count = text.length;
-  input.setAttribute('data-charcount', count); // Update the data-charcount attribute with the character count
+  input.setAttribute('data-charcount', count);
 });
+
 
 function copyToClipboard() {
   const outputText = document.getElementById('output');
