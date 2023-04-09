@@ -1,31 +1,6 @@
 const cleanButton = document.getElementById('clean-button');
 const outputContainer = document.getElementById('output-container');
 const output = document.getElementById('output');
-const input = document.getElementById('input');
-const charCount = document.getElementById('char-count');
-
-input.addEventListener('input', () => {
-  const text = input.value;
-  const count = text.length;
-  charCount.innerText = `${count} characters`;
-});
-
-
-input.addEventListener('input', () => {
-  const text = input.value;
-  const count = text.length;
-  input.setAttribute('data-charcount', count);
-});
-
-const textArea = document.querySelector('.text-area');
-
-textArea.addEventListener('input', () => {
-  const text = textArea.textContent;
-  const count = text.length;
-  textArea.setAttribute('data-charcount', count);
-});
-
-
 function copyToClipboard() {
   const outputText = document.getElementById('output');
   const textArea = document.createElement('textarea');
