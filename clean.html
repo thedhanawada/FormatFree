@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Text Cleaner</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <h1>Text Cleaner</h1>
+    <p>Paste your text below:</p>
+    <textarea id="text-input" rows="10" cols="50"></textarea>
+    <button id="clean-button">Clean</button>
+    <p>Cleaned text:</p>
+    <pre id="text-output"></pre>
+    
+    <script>
+      const textInput = document.getElementById('text-input');
+      const cleanButton = document.getElementById('clean-button');
+      const textOutput = document.getElementById('text-output');
+      
+      cleanButton.addEventListener('click', () => {
+        const dirtyText = textInput.value;
+        const cleanText = dirtyText.replace(/<\/?[^>]+(>|$)/g, "");
+        textOutput.textContent = cleanText;
+      });
+    </script>
+  </body>
+</html>
