@@ -4,25 +4,91 @@
     <title>Text Cleaner</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Include the tabs CSS -->
+    <style>
+      .tab {
+        overflow: hidden;
+        border: 1px solid #ccc;
+        background-color: #f1f1f1;
+      }
+
+      .tab button {
+        background-color: inherit;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        transition: 0.3s;
+        font-size: 17px;
+      }
+
+      .tab button:hover {
+        background-color: #ddd;
+      }
+
+      .tab button.active {
+        background-color: #ccc;
+      }
+
+      .tabcontent {
+        display: none;
+        padding: 6px 12px;
+        border: 1px solid #ccc;
+        border-top: none;
+      }
+    </style>
   </head>
+  
   <body>
     <h1>Text Cleaner</h1>
-    <p>Paste your text below:</p>
-    <textarea id="text-input" rows="10" cols="50"></textarea>
-    <button id="clean-button">Clean</button>
-    <p>Cleaned text:</p>
-    <pre id="text-output"></pre>
     
+    <!-- Create the tabs -->
+    <div class="tab">
+      <button class="tablinks" onclick="openTab(event, 'clean-paste')">Clean Paste</button>
+      <button class="tablinks" onclick="openTab(event, 'clean-style')">Clean Style</button>
+    </div>
+    
+    <!-- Create the content for each tab -->
+    <div id="clean-paste" class="tabcontent">
+      <p>Paste your text below:</p>
+      <textarea id="paste-input" rows="10" cols="50"></textarea>
+      <button id="paste-button">Clean</button>
+      <p>Cleaned text:</p>
+      <pre id="paste-output"></pre>
+    </div>
+    
+    <div id="clean-style" class="tabcontent">
+      <p>Copy your styled text below:</p>
+      <textarea id="style-input" rows="10" cols="50"></textarea>
+      <button id="style-button">Clean</button>
+      <p>Cleaned text:</p>
+      <pre id="style-output"></pre>
+    </div>
+    
+    <!-- Include the tabs JavaScript -->
     <script>
-      const textInput = document.getElementById('text-input');
-      const cleanButton = document.getElementById('clean-button');
-      const textOutput = document.getElementById('text-output');
-      
-      cleanButton.addEventListener('click', () => {
-        const dirtyText = textInput.value;
-        const cleanText = dirtyText.replace(/<\/?[^>]+(>|$)/g, "");
-        textOutput.textContent = cleanText;
-      });
-    </script>
-  </body>
-</html>
+      function openTab(evt, tabName) {
+        // Get all elements with class="tabcontent" and hide them
+        const tabcontent = document.getElementsByClassName("tabcontent");
+        for (let i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+
+        // Get all elements with class="tablinks" and remove the class "active"
+        const tablinks = document.getElementsByClassName("tablinks");
+        for (let i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        // Show the current tab, and add an "active" class to the button that opened the tab
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+
+      // Add event listeners to the buttons
+      const pasteButton = document.getElementById('paste-button');
+      const pasteOutput = document.getElementById('paste-output');
+      pasteButton.addEventListener('click', () => {
+        const dirtyText = document.getElementById('paste-input').value;
+        const cleanText = dirtyText.replace(/<\/?[^>]+(>|$
