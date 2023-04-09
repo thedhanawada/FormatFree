@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Text Cleaner</title>
+    <title>FormatFree</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
@@ -41,11 +41,11 @@
   </head>
   
   <body>
-    <h1>Text Cleaner</h1>
+    <h1>FormatFree</h1>
     
     <!-- Create the tabs -->
     <div class="tab">
-      <button class="tablinks" onclick="openTab(event, 'clean-paste')">Clean Paste</button>
+      <button class="tablinks" onclick="openTab(event, 'clean-paste')" id="defaultOpen">Clean Paste</button>
       <button class="tablinks" onclick="openTab(event, 'clean-style')">Clean Style</button>
     </div>
     
@@ -69,15 +69,18 @@
     <!-- Include the tabs JavaScript -->
     <script>
       function openTab(evt, tabName) {
+        // Declare all variables
+        let i, tabcontent, tablinks;
+
         // Get all elements with class="tabcontent" and hide them
-        const tabcontent = document.getElementsByClassName("tabcontent");
-        for (let i = 0; i < tabcontent.length; i++) {
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
           tabcontent[i].style.display = "none";
         }
 
         // Get all elements with class="tablinks" and remove the class "active"
-        const tablinks = document.getElementsByClassName("tablinks");
-        for (let i = 0; i < tablinks.length; i++) {
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
           tablinks[i].className = tablinks[i].className.replace(" active", "");
         }
 
@@ -91,4 +94,4 @@
       const pasteOutput = document.getElementById('paste-output');
       pasteButton.addEventListener('click', () => {
         const dirtyText = document.getElementById('paste-input').value;
-        const cleanText = dirtyText.replace(/<\/?[^>]+(>|$
+        const cleanText = dirtyText.replace(/<\/?[^
