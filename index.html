@@ -9,7 +9,9 @@
       /* Body styles */
       body {
         font-family: Arial, sans-serif;
-        background-color: #f2f2f2;
+        background-color: #fafafa;
+        margin: 0;
+        padding: 0;
       }
       
       /* Heading styles */
@@ -28,6 +30,8 @@
         border: 2px solid #ccc;
         border-radius: 4px;
         resize: vertical;
+        font-size: 16px;
+        line-height: 1.5;
       }
       
       button {
@@ -38,10 +42,11 @@
         border-radius: 4px;
         cursor: pointer;
         font-size: 16px;
+        transition: background-color 0.2s ease-in-out;
       }
       
       button:hover {
-        background-color: #45a049;
+        background-color: #3e8e41;
       }
       
       /* Output styles */
@@ -49,15 +54,21 @@
         display: none;
         max-width: 600px;
         margin: 0 auto;
+        margin-top: 40px;
+        background-color: #fff;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        overflow: hidden;
       }
       
       #output-container pre {
         white-space: pre-wrap;
         word-wrap: break-word;
         background-color: #fff;
-        border: 2px solid #ccc;
-        padding: 10px;
+        padding: 20px;
         border-radius: 4px;
+        font-size: 16px;
+        line-height: 1.5;
         overflow: auto;
       }
     </style>
@@ -67,11 +78,11 @@
     <h1>FormatFree</h1>
     
     <div style="max-width: 600px; margin: 0 auto;">
-      <p>Paste your text below:</p>
-      <textarea id="input" rows="10"></textarea>
+      <p style="margin-bottom: 10px;">Paste your text below:</p>
+      <textarea id="input" rows="10" placeholder="Type or paste text here..."></textarea>
       <button id="clean-button">Clean</button>
       <div id="output-container">
-        <p>Cleaned text:</p>
+        <p style="margin: 0;">Cleaned text:</p>
         <pre id="output"></pre>
       </div>
     </div>
