@@ -71,6 +71,13 @@
         line-height: 1.5;
         overflow: auto;
       }
+      
+      #output-label {
+        margin-bottom: 10px;
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+      }
     </style>
   </head>
   
@@ -82,7 +89,7 @@
       <textarea id="input" rows="10" placeholder="Type or paste text here..."></textarea>
       <button id="clean-button">Clean</button>
       <div id="output-container">
-        <p style="margin: 0;">Cleaned text:</p>
+        <div id="output-label">Cleaned text:</div>
         <pre id="output"></pre>
       </div>
     </div>
@@ -103,5 +110,3 @@
         }
       });
     </script>
-  </body>
-</html>
