@@ -17,6 +17,14 @@ input.addEventListener('input', () => {
   input.setAttribute('data-charcount', count);
 });
 
+const textArea = document.querySelector('.text-area');
+
+textArea.addEventListener('input', () => {
+  const text = textArea.textContent;
+  const count = text.length;
+  textArea.setAttribute('data-charcount', count);
+});
+
 
 function copyToClipboard() {
   const outputText = document.getElementById('output');

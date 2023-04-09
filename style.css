@@ -27,11 +27,17 @@ body {
   }
   
   /* Input and button styles */
-  textarea {
+  .text-area {
     position: relative;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 10px;
   }
   
-  textarea::after {
+  .text-area::after {
     content: attr(data-charcount) " characters";
     position: absolute;
     bottom: 5px;
@@ -39,7 +45,7 @@ body {
     font-size: 12px;
     color: #999;
   }
-    
+      
   button#clean-button {
     display: block;
     margin: 0 auto;
@@ -79,21 +85,6 @@ body {
     overflow: auto;
   }
 
-  /* Add this CSS to your stylesheet */
-
-textarea {
-    position: relative;
-    padding-right: 80px; /* Add some padding on the right to make space for the character count */
-  }
-  
-  textarea::after {
-    content: attr(data-charcount) " characters"; /* Add the character count as content */
-    position: absolute;
-    bottom: 5px;
-    right: 5px;
-    font-size: 12px;
-    color: #999;
-  }
   
   
   #output-label {
