@@ -7,45 +7,55 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <h1>FormatFree</h1>
-    
     <div class="container">
-      <p>Paste your text below:</p>
-      <textarea id="input" rows="10" placeholder="Type or paste text here..."></textarea>
+      <h1>FormatFree</h1>
       
-      <p>Select one or more options:</p>
-      <div>
-        <input type="checkbox" id="remove-html-checkbox" name="remove-html" checked>
-        <label for="remove-html-checkbox">Remove HTML tags</label>
-      </div>
-      <div>
-        <input type="checkbox" id="capitalize-checkbox" name="capitalize">
-        <label for="capitalize-checkbox">Capitalize first letter of each sentence</label>
-      </div>
-      <div>
-        <input type="checkbox" id="uppercase-checkbox" name="uppercase">
-        <label for="uppercase-checkbox">Convert all text to uppercase</label>
-      </div>
-      <div>
-        <input type="checkbox" id="linebreak-checkbox" name="linebreak">
-        <label for="linebreak-checkbox">Remove line breaks</label>
-      </div>
-      <div>
-        <label for="encoding-dropdown">Encoding:</label>
-        <select id="encoding-dropdown" name="encoding">
-          <option value="none">None</option>
-          <option value="utf-8">UTF-8</option>
-          <option value="iso-8859-1">ISO-8859-1</option>
-        </select>
+      <div class="input-output-container">
+        <div class="input-container">
+          <p class="label">Input:</p>
+          <textarea id="input" rows="10" placeholder="Type or paste text here..."></textarea>
+        </div>
+        
+        <div class="output-container">
+          <p class="label">Cleaned text:</p>
+          <div id="output-container">
+            <pre id="output"></pre>
+          </div>
+          <button id="copy-button" onclick="copyToClipboard()" data-original-text="Copy to Clipboard">Copy to Clipboard</button>
+        </div>
       </div>
       
-      <button id="clean-button">Clean</button>
-      <div id="output-label">Cleaned text:</div>
-      <div id="output-container">
-        <pre id="output"></pre>
+      <div class="options-container">
+        <div class="option-group">
+          <input type="checkbox" id="remove-html-checkbox" name="remove-html" checked>
+          <label for="remove-html-checkbox">Remove HTML tags</label>
+        </div>
+        <div class="option-group">
+          <input type="checkbox" id="capitalize-checkbox" name="capitalize">
+          <label for="capitalize-checkbox">Capitalize first letter of each sentence</label>
+        </div>
+        <div class="option-group">
+          <input type="checkbox" id="uppercase-checkbox" name="uppercase">
+          <label for="uppercase-checkbox">Convert all text to uppercase</label>
+        </div>
+        <div class="option-group">
+          <input type="checkbox" id="linebreak-checkbox" name="linebreak">
+          <label for="linebreak-checkbox">Remove line breaks</label>
+        </div>
+        <div class="option-group">
+          <label for="encoding-dropdown">Encoding:</label>
+          <select id="encoding-dropdown" name="encoding">
+            <option value="none">None</option>
+            <option value="utf-8">UTF-8</option>
+            <option value="iso-8859-1">ISO-8859-1</option>
+          </select>
+        </div>
       </div>
-      <button id="copy-button" onclick="copyToClipboard()" data-original-text="Copy to Clipboard">Copy to Clipboard</button>
-      <div id="char-count">0 characters</div>
+      
+      <div class="button-container">
+        <button id="clean-button">Clean</button>
+        <div id="char-count">0 characters</div>
+      </div>
     </div>
     
     <script src="script.js"></script>

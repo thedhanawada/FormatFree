@@ -1,22 +1,25 @@
 # FormatFree
 
-FormatFree is a simple web tool that allows you to clean up HTML tags from pasted text. The tool provides a clean and user-friendly interface that makes it easy to paste in text, clean it up, and copy the resulting text to your clipboard.
+FormatFree is a simple web application for cleaning and formatting text. It offers the following features:
 
-## How to Use FormatFree
+- Remove HTML tags from text
+- Capitalize the first letter of each sentence
+- Convert all text to uppercase
+- Remove or add line breaks in the text
+- Encode the text using a specific character encoding (like UTF-8 or ISO-8859-1)
 
-Using FormatFree is easy! Here's what you need to do:
+## Usage
 
-1. Open your web browser and navigate to the FormatFree webpage.
-2. Scroll down to the "Paste your text below" section of the page.
-3. Paste the text you want to clean up into the text box provided.
-4. Click the "Clean" button to clean up the text.
-5. The cleaned text will be displayed in the "Cleaned text" section below the text box.
-6. Copy the cleaned text to your clipboard by selecting it and pressing "Ctrl+C" or "Command+C".
+To use FormatFree, simply go to [formatfree.io](https://formatfree.io) in your web browser. Then, paste your text into the input field and select any desired formatting options. Finally, click the "Clean" button to clean and format your text.
 
-That's it! You can now paste the cleaned text into your document or application of choice.
+The cleaned text will be displayed in the output field below the input field. You can copy the cleaned text to your clipboard by clicking the "Copy to Clipboard" button.
 
-## How FormatFree Works
+## Contributing
 
-FormatFree uses JavaScript to remove HTML tags from pasted text. When you click the "Clean" button, the JavaScript code looks for all instances of HTML tags in the input text and removes them. The cleaned text is then displayed in the output section of the page.
+If you find a bug or have a feature request, please [open an issue](https://github.com/exampleuser/formatfree/issues/new).
 
-Thank you for using this project! I hope you find it useful.
+If you would like to contribute to the development of FormatFree, please fork the repository and submit a pull request.
+
+## License
+
+FormatFree is released under the [MIT License](https://opensource.org/licenses/MIT).
