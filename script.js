@@ -1,9 +1,9 @@
 const cleanButton = document.getElementById('clean-button');
 const outputContainer = document.getElementById('output-container');
 const output = document.getElementById('output');
-const outputLabel = document.getElementById('output-label');
 const copyButton = document.getElementById('copy-button');
 const linebreakCheckbox = document.getElementById('linebreak-checkbox');
+const outputLabel = document.getElementById('output-label');
 
 cleanButton.addEventListener('click', () => {
   const dirtyText = document.getElementById('input').value;
