@@ -1,6 +1,14 @@
 const cleanButton = document.getElementById('clean-button');
 const outputContainer = document.getElementById('output-container');
 const output = document.getElementById('output');
+const outputLabel = document.getElementById('output-label');
+
+cleanButton.addEventListener('click', () => {
+  // Code for cleaning the text
+
+  outputLabel.style.display = "block";
+});
+
 function copyToClipboard() {
   const outputText = document.getElementById('output');
   const textArea = document.createElement('textarea');
