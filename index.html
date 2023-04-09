@@ -19,6 +19,19 @@
         text-align: center;
         margin-top: 40px;
         margin-bottom: 20px;
+        font-size: 2.5em;
+      }
+      
+      /* Container styles */
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      
+      /* Paragraph styles */
+      p {
+        margin-bottom: 10px;
+        font-size: 1.1em;
       }
       
       /* Input and button styles */
@@ -43,6 +56,9 @@
         cursor: pointer;
         font-size: 16px;
         transition: background-color 0.2s ease-in-out;
+        display: block;
+        margin: 8px 0;
+        width: 100%;
       }
       
       button:hover {
@@ -52,20 +68,18 @@
       /* Output styles */
       #output-container {
         display: none;
-        max-width: 600px;
-        margin: 0 auto;
         margin-top: 40px;
         background-color: #fff;
         border-radius: 4px;
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         overflow: hidden;
+        padding: 20px;
       }
       
       #output-container pre {
         white-space: pre-wrap;
         word-wrap: break-word;
         background-color: #fff;
-        padding: 20px;
         border-radius: 4px;
         font-size: 16px;
         line-height: 1.5;
@@ -84,14 +98,15 @@
   <body>
     <h1>FormatFree</h1>
     
-    <div style="max-width: 600px; margin: 0 auto;">
-      <p style="margin-bottom: 10px;">Paste your text below:</p>
+    <div class="container">
+      <p>Paste your text below:</p>
       <textarea id="input" rows="10" placeholder="Type or paste text here..."></textarea>
       <button id="clean-button">Clean</button>
+      <div id="output-label">Cleaned text:</div>
       <div id="output-container">
-        <div id="output-label">Cleaned text:</div>
         <pre id="output"></pre>
       </div>
+      <button id="copy-button">Copy to Clipboard</button>
     </div>
     
     <script>
@@ -99,6 +114,16 @@
       const outputContainer = document.getElementById('output-container');
       const output = document.getElementById('output');
       
+      document.getElementById('copy-button').addEventListener('click', () => {
+      const outputText = document.getElementById('output');
+      const textArea = document.createElement('textarea');
+      textArea.value = outputText.innerText;
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textArea);
+      });
+
       cleanButton.addEventListener('click', () => {
         const dirtyText = document.getElementById('input').value;
         const cleanText = dirtyText.replace(/<\/?[^>]+(>|$)/g, "");
