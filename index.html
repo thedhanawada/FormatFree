@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/turndown@7.1.1/dist/turndown.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/showdown@1.9.1/dist/showdown.min.js"></script>
   </head>
   <body>
     <div class="container">
@@ -14,21 +16,12 @@
         <p>To get started, paste your text into the input box and select the options you want to apply. Click the "Clean" button to see the cleaned text in the output box. You can then copy the cleaned text to your clipboard by clicking the "Copy to Clipboard" button.</p>
       </div>
       
-      <div class="input-output-container">
-        <div class="input-container">
-          <p class="label">Input:</p>
-          <textarea id="input" rows="10" placeholder="Type or paste text here..."></textarea>
-        </div>
-        
-        <div class="output-container">
-          <p class="label" id="output-label">Cleaned text:</p>
-          <div id="output-container">
-            <pre id="output"></pre>
-          </div>
-          <button id="copy-button" onclick="copyToClipboard()" data-original-text="Copy to Clipboard">Copy to Clipboard</button>
-        </div>
+      <div class="input-wrapper">
+        <textarea id="input" rows="10" placeholder="Type or paste text here..."></textarea>
+        <div id="char-count"></div>
+        <button id="clean-button">Clean</button>
       </div>
-      
+                          
       <div class="options-container">
         <div class="option-group">
           <input type="checkbox" id="remove-html-checkbox" name="remove-html" checked>
@@ -64,12 +57,19 @@
         </div>        
       </div>
       
-      <div class="button-container">
-        <button id="clean-button">Clean</button>
-        <div id="char-count">0 characters</div>
+      <div class="output-container">
+        <p class="label" id="output-label">Cleaned text:</p>
+        <div id="output-container">
+          <pre id="output"></pre>
+        </div>
+        <div class="buttons-container">
+          <button id="copy-button" onclick="copyToClipboard()" data-original-text="Copy to Clipboard">Copy to Clipboard</button>
+        </div>
       </div>
     </div>
-    
-    <script src="script.js"></script>
-  </body>
+  </div>
+  <script src="script.js"></script>
+</body>
 </html>
+
+       
