@@ -1,25 +1,31 @@
 # FormatFree
 
-FormatFree is a simple web application for cleaning and formatting text. It offers the following features:
+FormatFree is a simple web application that allows users to quickly clean up and format text. It provides options to remove HTML tags, capitalize the first letter of each sentence, convert all text to uppercase, remove line breaks, and encode the text using a specific character encoding.
 
-- Remove HTML tags from text
-- Capitalize the first letter of each sentence
-- Convert all text to uppercase
-- Remove or add line breaks in the text
-- Encode the text using a specific character encoding (like UTF-8 or ISO-8859-1)
+## Features
 
-## Usage
+- Remove HTML tags from the input text.
+- Capitalize the first letter of each sentence.
+- Convert all text to uppercase.
+- Remove line breaks.
+- Encode the text using a specific character encoding (UTF-8, ISO-8859-1, or none).
+- Output formatted text as plain text, HTML, or Markdown.
 
-To use FormatFree, simply go to [formatfree.io](https://formatfree.io) in your web browser. Then, paste your text into the input field and select any desired formatting options. Finally, click the "Clean" button to clean and format your text.
+## How to use
 
-The cleaned text will be displayed in the output field below the input field. You can copy the cleaned text to your clipboard by clicking the "Copy to Clipboard" button.
+1. Open the `index.html` file in your web browser.
+2. Paste your text into the input box.
+3. Select the desired formatting options from the checkboxes and dropdown menus.
+4. Click the "Clean" button to clean and format the text according to the selected options.
+5. The cleaned text will appear in the output box. Click the "Copy to Clipboard" button to copy the cleaned text to your clipboard.
 
-## Contributing
+## Dependencies
 
-If you find a bug or have a feature request, please [open an issue](https://github.com/exampleuser/formatfree/issues/new).
+This project uses the following external libraries:
 
-If you would like to contribute to the development of FormatFree, please fork the repository and submit a pull request.
+- [Turndown](https://github.com/domchristie/turndown) - to convert HTML to Markdown.
+- [Showdown](https://github.com/showdownjs/showdown) - to convert Markdown to HTML.
 
 ## License
 
-FormatFree is released under the [MIT License](https://opensource.org/licenses/MIT).
+This project is open-source and available under the [MIT License](LICENSE).
