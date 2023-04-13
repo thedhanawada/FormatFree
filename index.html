@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/turndown@7.1.1/dist/turndown.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/showdown@1.9.1/dist/showdown.min.js"></script>
+    <script src="https://kit.fontawesome.com/your-unique-id.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <div class="container">
@@ -26,22 +27,37 @@
       <div class="options-container">
         <div class="option-group">
           <input type="checkbox" id="remove-html-checkbox" name="remove-html" checked>
-          <label for="remove-html-checkbox">Remove HTML tags</label>
+          <label for="remove-html-checkbox">
+            <i class="far fa-trash-alt"></i>
+            Remove HTML tags
+          </label>
         </div>
         <div class="option-group">
           <input type="checkbox" id="capitalize-checkbox" name="capitalize">
-          <label for="capitalize-checkbox">Capitalize first letter of each sentence</label>
+          <label for="capitalize-checkbox">
+            <i class="fas fa-font"></i>
+            Capitalize first letter of each sentence
+          </label>
         </div>
         <div class="option-group">
           <input type="checkbox" id="uppercase-checkbox" name="uppercase">
-          <label for="uppercase-checkbox">Convert all text to uppercase</label>
+          <label for="uppercase-checkbox">
+            <i class="fas fa-font"></i>
+            Convert all text to uppercase
+          </label>
         </div>
         <div class="option-group">
           <input type="checkbox" id="linebreak-checkbox" name="linebreak">
-          <label for="linebreak-checkbox">Remove line breaks</label>
+          <label for="linebreak-checkbox">
+            <i class="fas fa-arrows-alt-v"></i>
+            Remove line breaks
+          </label>
         </div>
         <div class="option-group">
-          <label for="encoding-dropdown">Encoding:</label>
+          <label for="encoding-dropdown">
+            <i class="fas fa-cog"></i>
+            Encoding:
+          </label>
           <select id="encoding-dropdown" name="encoding">
             <option value="none">None</option>
             <option value="utf-8">UTF-8</option>
@@ -49,7 +65,10 @@
           </select>
         </div>
         <div class="option-group">
-          <label for="output-format-dropdown">Output format:</label>
+          <label for="output-format-dropdown">
+            <i class="fas fa-file"></i>
+            Output format:
+          </label>
           <select id="output-format-dropdown" name="output-format">
             <option value="plain">Plain text</option>
             <option value="html">HTML</option>
@@ -57,6 +76,7 @@
           </select>
         </div>        
       </div>
+    
       
       <div class="output-container">
         <p class="label" id="output-label">Cleaned text:</p>
